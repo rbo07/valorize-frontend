@@ -1,0 +1,165 @@
+:root {
+    --size: 120px;
+    --bord: 12px;
+    --bord2: 7px;
+  }
+  .media .chart {
+    background: #ededed; /* Safari, caso não carregue o gráfico */
+    background-image: conic-gradient(#ffcc00 var(--value), #efefef var(--value));
+  }
+
+  .chart.tie {
+    background: #f8f8f8; /* Safari, caso não carregue o gráfico */
+    background-image: conic-gradient(#35d59d var(--value), #efefef var(--value));
+  }
+
+  .chart {
+    width: var(--size);
+    height: var(--size);
+    margin: 30px auto 5px; 
+    border-radius: 50%;
+    background: #f8f8f8; /* Safari, caso não carregue o gráfico */
+    background-image: conic-gradient(#b2dbf8 var(--value), #f8f8f8 var(--value));
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .media .chart {
+    margin: 15px auto 10px; 
+  }
+  .media .chart {
+    width: 150px;
+    height: 150px;
+  }
+  .card.evaluated .media .chart {
+    width: 140px;
+    height: 140px;
+  }
+  .chart::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - var(--bord));
+    height: calc(100% - var(--bord));
+    background: white;
+    border-radius: inherit;
+  }
+  .card.block-winners .block-user .chart::after {
+    width: calc(100% - var(--bord2));
+    height: calc(100% - var(--bord2));
+  }
+  /* .media .chart::after {
+    background: #f8f8f8;
+  } */
+
+  p {
+    position: relative;
+    z-index: 1;
+    font-size: 24px;
+    color: #555;
+  }
+  .x-0 { --value: 0%; }
+  .x-1 { --value: 1%; }
+  .x-2 { --value: 2%; }
+  .x-3 { --value: 3%; }
+  .x-4 { --value: 4%; }
+  .x-5 { --value: 5%; }
+  .x-6 { --value: 6%; }
+  .x-7 { --value: 7%; }
+  .x-8 { --value: 8%; }
+  .x-9 { --value: 9%; }
+  .x-10 { --value: 10%; }
+  .x-11 { --value: 11%; }
+  .x-12 { --value: 12%; }
+  .x-13 { --value: 13%; }
+  .x-14 { --value: 14%; }
+  .x-15 { --value: 15%; }
+  .x-16 { --value: 16%; }
+  .x-17 { --value: 17%; }
+  .x-18 { --value: 18%; }
+  .x-19 { --value: 19%; }
+  .x-20 { --value: 20%; }
+  .x-21 { --value: 21%; }
+  .x-22 { --value: 22%; }
+  .x-23 { --value: 23%; }
+  .x-24 { --value: 24%; }
+  .x-25 { --value: 25%; }
+  .x-26 { --value: 26%; }
+  .x-27 { --value: 27%; }
+  .x-28 { --value: 28%; }
+  .x-29 { --value: 29%; }
+  .x-30 { --value: 30%; }
+  .x-31 { --value: 31%; }
+  .x-32 { --value: 32%; }
+  .x-33 { --value: 33%; }
+  .x-34 { --value: 34%; }
+  .x-35 { --value: 35%; }
+  .x-36 { --value: 36%; }
+  .x-37 { --value: 37%; }
+  .x-38 { --value: 38%; }
+  .x-39 { --value: 39%; }
+  .x-40 { --value: 40%; }
+  .x-41 { --value: 41%; }
+  .x-42 { --value: 42%; }
+  .x-43 { --value: 43%; }
+  .x-44 { --value: 44%; }
+  .x-45 { --value: 45%; }
+  .x-46 { --value: 46%; }
+  .x-47 { --value: 47%; }
+  .x-48 { --value: 48%; }
+  .x-49 { --value: 49%; }
+  .x-50 { --value: 50%; }
+  .x-51 { --value: 51%; }
+  .x-52 { --value: 52%; }
+  .x-53 { --value: 53%; }
+  .x-54 { --value: 54%; }
+  .x-55 { --value: 55%; }
+  .x-56 { --value: 56%; }
+  .x-57 { --value: 57%; }
+  .x-58 { --value: 58%; }
+  .x-59 { --value: 59%; }
+  .x-60 { --value: 60%; }
+  .x-61 { --value: 61%; }
+  .x-62 { --value: 62%; }
+  .x-63 { --value: 63%; }
+  .x-64 { --value: 64%; }
+  .x-65 { --value: 65%; }
+  .x-66 { --value: 66%; }
+  .x-67 { --value: 67%; }
+  .x-68 { --value: 68%; }
+  .x-69 { --value: 69%; }
+  .x-70 { --value: 70%; }
+  .x-71 { --value: 71%; }
+  .x-72 { --value: 72%; }
+  .x-73 { --value: 73%; }
+  .x-74 { --value: 74%; }
+  .x-75 { --value: 75%; }
+  .x-76 { --value: 76%; }
+  .x-77 { --value: 77%; }
+  .x-78 { --value: 78%; }
+  .x-79 { --value: 79%; }
+  .x-80 { --value: 80%; }
+  .x-81 { --value: 81%; }
+  .x-82 { --value: 82%; }
+  .x-83 { --value: 83%; }
+  .x-84 { --value: 84%; }
+  .x-85 { --value: 85%; }
+  .x-86 { --value: 86%; }
+  .x-87 { --value: 87%; }
+  .x-88 { --value: 88%; }
+  .x-89 { --value: 89%; }
+  .x-90 { --value: 90%; }
+  .x-91 { --value: 91%; }
+  .x-92 { --value: 92%; }
+  .x-93 { --value: 93%; }
+  .x-94 { --value: 94%; }
+  .x-95 { --value: 95%; }
+  .x-96 { --value: 96%; }
+  .x-97 { --value: 97%; }
+  .x-98 { --value: 98%; }
+  .x-99 { --value: 99%; }
+  .x-100 { --value: 100%; }
