@@ -292,7 +292,7 @@ class ListCriterion extends React.Component {
 
                                     <div class="form-row">
 
-                                        <div class="form-row justify-content-center">
+                                        
                                             <div class="form-group col-md-12">
                                                 <label for="inputCriterionName">Nome do Critério <span class="label-required">*</span></label>
                                                 <input maxlength="100" type="text" class="form-control" id="inputCriterionName" placeholder="Nome do Critério" value={this.state.campCriterionName} onChange={(value) => this.setState({ campCriterionName: value.target.value })} />
@@ -311,15 +311,14 @@ class ListCriterion extends React.Component {
                                                 </Select>
                                             </div>
 
-                                            <div class="form-group col-md-12">
+                                            {/* <div class="form-group col-md-12">
                                                 <label for="selectAwardLookUp">Prêmio Associado</label>
                                                 <Select onChange={(value) => this.handleChangeAward(value)} size={'40px'} value={this.state.valueSelectedAwardsLookUp} placeholder="Selecione o Prêmio" >
                                                     {this.state.dataAwardsLookUp.map(data => <Option value={data.id} key={data.id}>{data.award_name}</Option>)}
                                                 </Select>
-                                            </div>
-                                        </div>
-
+                                            </div> */}
                                     </div>
+                                    
                                     <div class="message-required-form"><span class="label-required">*</span> Campos Obrigatórios</div>
                                     <div class="modal-footer">
                                         <button id="cancelButton" type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>

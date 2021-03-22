@@ -236,13 +236,13 @@ class EditCriterion extends React.Component {
                             <textarea maxlength="255" type="text" class="inputDate form-control" id="inputCriterionDescription" placeholder="Descrição do Critério" value={this.state.campCriterionDescription} onChange={(value) => this.setState({ campCriterionDescription: value.target.value })} />
                         </div>
 
-                        <div class="form-group col-md-4">
+                        {/* <div class="form-group col-md-4">
                             <label for="selectAwardLookUp">Prêmio Associado</label>
                             <Select onChange={(value) => this.handleChangeAward(value)} size={'40px'} value={this.state.valueSelectedAwardsLookUp} placeholder="Selecione o Prêmio" >
                                 {this.state.dataAwardsLookUp.map(data => <Option value={data.id} key={data.id}>{data.award_name}</Option>)}
                             </Select>
+                        </div> */}
 
-                        </div>
                     </div>
 
                     <div class="message-required-form"><span class="label-required">*</span> Campos Obrigatórios</div>
