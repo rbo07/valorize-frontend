@@ -374,7 +374,7 @@ class MyTeamEvaluation extends React.Component {
             return (
                 <div class="col-md-12">
                     <button type="button" class="btn btn-primary float-right" onClick={() => this.sendSave()}>
-                        Concluir Avaliação
+                        Concluir Avaliação <Spin size="small" spinning={this.state.loading} />
                 </button>
                     <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
                 </div>
@@ -436,6 +436,7 @@ class MyTeamEvaluation extends React.Component {
             )
         } else {
 
+            this.setState({ loading: true });
             const datapost = []
             const periodId = this.state.periodId
             const url = baseURL + "/evaluation/" + periodId;
@@ -468,6 +469,8 @@ class MyTeamEvaluation extends React.Component {
             })
                 .then(res => {
                     if (res.data.success === true) {
+
+                        this.setState({ loading: false });
 
                         Swal.fire(
                             'Sucesso!',
