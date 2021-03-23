@@ -286,7 +286,7 @@ class EditPeriod extends React.Component {
                             <input type="text" class="inputDate form-control" id="inputPeriodFinalDate" placeholder="Data Final" value={this.state.campPeriodFinalDateSub} />
                         </div>
 
-                        {/* <div class="form-group col-md-6">
+                        <div class="form-group col-md-6">
                             <label>Prêmios Associados</label>
                             <Multiselect
                                 options={this.state.dataAwardsLookUp}
@@ -306,7 +306,7 @@ class EditPeriod extends React.Component {
                                 onSelect={this.onSelectCriterionLookUp.bind(this)}
                                 onRemove={this.onRemoveCriterionLookUp.bind(this)}
                             />
-                        </div> */}
+                        </div>
                     </div>
                     <div class="message-required-form"><span class="label-required">*</span> Campos Obrigatórios</div>
                     <div class="card-footer">
