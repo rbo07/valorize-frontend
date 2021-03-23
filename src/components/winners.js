@@ -150,7 +150,7 @@ class Winners extends React.Component {
         } else if (result.length !== 0) {
             return (
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-primary float-right" onClick={() => this.sendTiebreaker()}>Desempatar</button>
+                    <button type="button" class="btn btn-primary float-right" onClick={() => this.sendTiebreaker()}>Desempatar <Spin size="small" spinning={this.state.loading} /></button>
                     <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
                 </div>
             )
@@ -161,7 +161,7 @@ class Winners extends React.Component {
         } else {
             return (
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-primary float-right" onClick={() => this.sendAward()}>Premiar</button>
+                    <button type="button" class="btn btn-primary float-right" onClick={() => this.sendAward()}>Premiar <Spin size="small" spinning={this.state.loading} /></button>
                     <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
                 </div>
             )
@@ -534,6 +534,8 @@ class Winners extends React.Component {
             )
         } else {
 
+            this.setState({ loading: true });
+
             const datapost = []
             const url = baseURL + "/tiebreak/add";
 
@@ -567,6 +569,8 @@ class Winners extends React.Component {
             })
                 .then(res => {
                     if (res.data.success === true) {
+
+                        this.setState({ loading: false });
 
                         Swal.fire(
                             'Sucesso!',
@@ -610,6 +614,7 @@ class Winners extends React.Component {
 
     sendSaveAward() {
 
+        this.setState({ loading: true });
         const datapost = []
         const url = baseURL + "/award/add"
 
@@ -634,6 +639,8 @@ class Winners extends React.Component {
         })
             .then(res => {
                 if (res.data.success === true) {
+
+                    this.setState({ loading: false });
 
                     Swal.fire(
                         'Sucesso!',

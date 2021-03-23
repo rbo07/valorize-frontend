@@ -307,6 +307,7 @@ class ListCriterion extends React.Component {
                                             <div class="form-group col-md-12">
                                                 <label for="selectPeriodLookUp">Período Associado</label>
                                                 <Select onChange={(value) => this.handleChangePeriod(value)} size={'40px'} value={this.state.valueSelectedPeriodsLookUp} placeholder="Selecione o Período" >
+                                                    <Option value={null} >Selecione o Período</Option>
                                                     {this.state.dataPeriodLookUp.map(data => <Option value={data.id} key={data.id}>{data.period_name}</Option>)}
                                                 </Select>
                                             </div>
@@ -520,9 +521,9 @@ class ListCriterion extends React.Component {
                         this.setState({ loading: false });
 
                         Swal.fire(
-                            'Erro!',
+                            'Alerta!',
                             res.data.message,
-                            'error'
+                            'warning'
                         )
 
                     }

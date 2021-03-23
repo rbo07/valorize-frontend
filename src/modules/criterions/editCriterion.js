@@ -219,19 +219,20 @@ class EditCriterion extends React.Component {
                 <div class="card card-form form-edit-user" >
 
                     <div class="form-row justify-content-center">
-                        <div class="form-group col-md-8">
+                        <div class="form-group col-md-6">
                             <label for="inputCriterionName">Nome do Critério <span class="label-required">*</span></label>
                             <input maxlength="100" type="text" class="form-control" id="inputCriterionName" placeholder="Nome do Critério" value={this.state.campCriterionName} onChange={(value) => this.setState({ campCriterionName: value.target.value })} />
                         </div>
 
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="selectPeriodLookUp">Período Associado</label>
                             <Select onChange={(value) => this.handleChangePeriod(value)} size={'40px'} value={this.state.valueSelectedPeriodsLookUp} placeholder="Selecione o Período" >
+                                <Option value={null} >Selecione o Período</Option>
                                 {this.state.dataPeriodLookUp.map(data => <Option value={data.id} key={data.id}>{data.period_name}</Option>)}
                             </Select>
                         </div>
 
-                        <div class="form-group col-md-8">
+                        <div class="form-group col-md-12">
                             <label for="inputCriterionDescription">Descrição do Critério <span class="label-required">*</span></label>
                             <textarea maxlength="255" type="text" class="inputDate form-control" id="inputCriterionDescription" placeholder="Descrição do Critério" value={this.state.campCriterionDescription} onChange={(value) => this.setState({ campCriterionDescription: value.target.value })} />
                         </div>
@@ -307,9 +308,9 @@ class EditCriterion extends React.Component {
                 else {
                     this.setState({ loading: false });
                     Swal.fire(
-                        'Erro!',
+                        'Alerta!',
                         res.data.message,
-                        'error'
+                        'warning'
                     )
                 }
             }).catch(error => {

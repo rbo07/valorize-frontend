@@ -2,6 +2,7 @@ body{
     color: #333;
     font-family: 'Roboto-Regular', sans-serif;
     background: #037ed3 !important;
+    overflow-x: hidden;
 }
 
 ul, li{
