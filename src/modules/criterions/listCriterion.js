@@ -412,6 +412,7 @@ class ListCriterion extends React.Component {
         Swal.fire({
             title: 'Você tem certeza?',
             text: 'Deseja remover este Critério?',
+            icon: "warning",
             type: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sim, deletar!',
@@ -423,7 +424,7 @@ class ListCriterion extends React.Component {
                 Swal.fire(
                     'Ação Cancelada',
                     'Critério mantido!',
-                    'warning'
+                    'info'
                 )
             }
         })

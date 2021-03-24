@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import Auth from "../services/auth";
 
 //import Axios
@@ -17,6 +18,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const currentUser = localStorage.getItem('USER_KEY');
+const currentRoleUser = localStorage.getItem('ROLE_KEY');
 const url = baseURL + '/dataHeader/' + currentUser
 
 class Header extends React.Component {
@@ -113,6 +115,29 @@ class Header extends React.Component {
 
   }
 
+  getLogo() {
+    if (currentRoleUser == 1) {
+      return (
+        <Link class="logo" to="/admin/dashboard" ></Link>
+      )
+
+    } else if (currentRoleUser == 2) {
+      return (
+        <Link class="logo" to="/leader/dashboard" ></Link>
+      )
+
+    } else if (currentRoleUser == 3) {
+      return (
+        <Link class="logo" to="/dashboard" ></Link>
+      )
+
+    } else {
+      return (
+        <Link class="logo" to="/dashboard" ></Link>
+      )
+    }
+  }
+
   checkTeamLeader(team, teamLeader) {
     if (teamLeader !== null) {
       return teamLeader
@@ -124,9 +149,9 @@ class Header extends React.Component {
       <div id="Header" className='Header'>
         <div class="row">
           <div class="col-md-6 col-sm-9 col-9">
-            <div class="logo"></div>
+            {this.getLogo()}
             <h4 class="title-header">Valorize</h4>
-            <div class="title-description">Avaliação e Desempenho Profissional</div>
+            <div class="title-description">Avaliação e Desempenho</div>
           </div>
           <div class="col-md-6 col-sm-3 col-3">
             <button class="btn btn-avatar dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

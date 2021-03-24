@@ -468,6 +468,7 @@ class ListRatings extends React.Component {
         Swal.fire({
             title: 'Você tem certeza?',
             text: 'Deseja remover este Avaliação',
+            icon: "warning",
             type: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sim, deletar!',
@@ -479,7 +480,7 @@ class ListRatings extends React.Component {
                 Swal.fire(
                     'Ação Cancelada',
                     'Avaliação mantida!',
-                    'warning'
+                    'info'
                 )
             }
         })

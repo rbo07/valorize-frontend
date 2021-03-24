@@ -310,6 +310,7 @@ class ListTiebreaker extends React.Component {
         Swal.fire({
             title: 'Você tem certeza?',
             text: 'Deseja remover este Critério de Desempate?',
+            icon: "warning",
             type: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sim, deletar!',
@@ -321,7 +322,7 @@ class ListTiebreaker extends React.Component {
                 Swal.fire(
                     'Ação Cancelada',
                     'Desempate mantido!',
-                    'warning'
+                    'info'
                 )
             }
         })

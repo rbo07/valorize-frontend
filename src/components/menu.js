@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTh } from '@fortawesome/free-solid-svg-icons'
 import { faMedal } from '@fortawesome/free-solid-svg-icons'
 import { faSpellCheck } from '@fortawesome/free-solid-svg-icons'
-import { faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
 import { faUsers } from '@fortawesome/free-solid-svg-icons'
 import { faWrench } from '@fortawesome/free-solid-svg-icons'
@@ -120,7 +120,7 @@ class Menu extends React.Component {
                     <li class="menu-item"><Link class="link-menu" to="/admin/tiebreakers" data-toggle="tooltip" data-placement="right" title="Gerenciar Critérios de Desempate" ><FontAwesomeIcon icon={faBalanceScale} /></Link> </li>
                     <li class="menu-item"><Link class="link-menu " to="/admin/awards" data-toggle="tooltip" data-placement="right" title="Gerenciar Prêmios" ><FontAwesomeIcon icon={faMedal} /></Link> </li>
                     <li class="menu-item"><Link class="link-menu" to="/admin/criterions" data-toggle="tooltip" data-placement="right" title="Gerenciar Critérios" ><FontAwesomeIcon icon={faSpellCheck} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/admin/periods" data-toggle="tooltip" data-placement="right" title="Gerenciar Períodos" ><FontAwesomeIcon icon={faCalendar} /></Link> </li>
+                    <li class="menu-item"><Link class="link-menu" to="/admin/periods" data-toggle="tooltip" data-placement="right" title="Gerenciar Períodos" ><FontAwesomeIcon icon={faCalendarAlt} /></Link> </li>
                     <li class="menu-item"><Link class="link-menu" to="/admin/users" data-toggle="tooltip" data-placement="right" title="Gerenciar Usuários" ><FontAwesomeIcon icon={faUserFriends} /></Link> </li>
                     <li class="menu-item"><Link class="link-menu" to="/admin/teams" data-toggle="tooltip" data-placement="right" title="Gerenciar Equipes" ><FontAwesomeIcon icon={faUsers} /></Link> </li>
                     <li class="menu-item"><Link class="link-menu" to="/admin/roles" data-toggle="tooltip" data-placement="right" title="Gerenciar Funções" ><FontAwesomeIcon icon={faWrench} /></Link> </li>

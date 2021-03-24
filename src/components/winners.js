@@ -150,7 +150,7 @@ class Winners extends React.Component {
         } else if (result.length !== 0) {
             return (
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-primary float-right" onClick={() => this.sendTiebreaker()}>Desempatar <Spin size="small" spinning={this.state.loading} /></button>
+                    <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendTiebreaker()}>Desempatar <Spin size="small" spinning={this.state.loading} /></button>
                     <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
                 </div>
             )
@@ -161,7 +161,7 @@ class Winners extends React.Component {
         } else {
             return (
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-primary float-right" onClick={() => this.sendAward()}>Premiar <Spin size="small" spinning={this.state.loading} /></button>
+                    <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendAward()}>Premiar <Spin size="small" spinning={this.state.loading} /></button>
                     <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
                 </div>
             )
@@ -596,6 +596,7 @@ class Winners extends React.Component {
         Swal.fire({
             title: 'Você tem certeza?',
             text: 'Deseja salvar os usuários premiados?',
+            icon: "warning",
             showCancelButton: true,
             confirmButtonText: 'Sim, salvar!',
             cancelButtonText: 'Não, cancelar!'
@@ -606,7 +607,7 @@ class Winners extends React.Component {
                 Swal.fire(
                     'Ação Cancelada',
                     'Usuários não foram premiados!',
-                    'warning'
+                    'info'
                 )
             }
         })

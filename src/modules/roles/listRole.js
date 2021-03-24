@@ -261,6 +261,7 @@ class ListRole extends React.Component {
         Swal.fire({
             title: 'Você tem certeza?',
             text: 'Deseja remover esta Função?',
+            icon: "warning",
             type: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sim, deletar!',

@@ -373,7 +373,7 @@ class MyTeamEvaluation extends React.Component {
         } else {
             return (
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-primary float-right" onClick={() => this.sendSave()}>
+                    <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendSave()}>
                         Concluir Avaliação <Spin size="small" spinning={this.state.loading} />
                 </button>
                     <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>

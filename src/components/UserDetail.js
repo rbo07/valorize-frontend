@@ -99,6 +99,9 @@ class UserDetail extends React.Component {
                     <div class="col-md-6 col-sm-10 col-10">
                         <h1>Dados do Usuário</h1>
                     </div>
+                    <div class="col-md-6 actions text-right">
+                        <button class="btn btn-outline-secondary" onClick={() => history.goBack()}>Voltar</button>
+                    </div>
                 </div>
                 <div class='dashboard row'>
                     <div class='col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12'>

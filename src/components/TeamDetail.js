@@ -61,6 +61,9 @@ class TeamDetail extends React.Component {
                         <h1 class="title-header-detail">{this.state.team_name}</h1>
                         {this.getLeader()}
                     </div>
+                    <div class="col-md-6 actions text-right">
+                        <Link class="btn btn-outline-secondary" to={"/admin/dashboard"} >Voltar</Link>
+                    </div>
                 </div>
                 <div class='row'>
                     <MyTeam id={this.state.temp_period} leaderId={this.props.match.params.leaderId} key={this.state.temp_period} setName={this.handleLanguage} />
@@ -71,7 +74,6 @@ class TeamDetail extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Link class="btn btn-outline-secondary" to={"/admin/dashboard"} >Voltar</Link>
             </div>
         )
     }

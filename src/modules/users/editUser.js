@@ -59,6 +59,7 @@ class EditUser extends React.Component {
       campEmail: "",
       campAddress: "",
       campPhone: "",
+      campPassword: "",
       valueSelectRole: null,
       selectRole: "",
       valueSelectTeam: null,
@@ -76,6 +77,20 @@ class EditUser extends React.Component {
     this.rolesLookUp();
     this.teamsLookUp();
     const upload = new FileUploadWithPreview("photoUploader");
+  }
+
+  insertPassword() {
+    if (currentRoleUser == 1) {
+      return (
+        <div class="form-group col-md-6">
+          <label for="inputPassword">Senha</label>
+          <input maxlength="20" type="password" class="form-control" id="inputPassword" placeholder="Atualize sua senha" value={this.state.campPassword} onChange={(value) => this.setState({ campPassword: value.target.value })} />
+        </div>
+      )
+
+    } else if (currentRoleUser == 2) {
+      return ''
+    }
   }
 
   // Validar email
@@ -334,6 +349,7 @@ class EditUser extends React.Component {
                 <div class="custom-file-container__image-preview"></div>
               </div>
             </div>
+            {this.insertPassword()}
           </div>
 
           <div class="message-required-form"><span class="label-required">*</span> Campos Obrigatórios</div>
@@ -411,6 +427,7 @@ class EditUser extends React.Component {
       datapost.append('role_current', this.state.currentRole);
       datapost.append('team_id', this.state.valueSelectTeam);
       datapost.append('team_current', this.state.currentTeam);
+      datapost.append('password_user', this.state.campPassword);
 
       if (this.state.profileImg !== '') {
         datapost.append('user_photo', this.state.profileImg);

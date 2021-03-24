@@ -348,9 +348,9 @@ h6{
     width: 100%;
 }
 .btn.btn-secondary{
-    color: #333;
+    color: #007bff;
     background-color: #ddd;
-    border-color: #ddd;
+    border-color: #007bff;
 }
 .container-login .btn.btn-secondary{
     margin-top: 10px;
@@ -881,7 +881,7 @@ ul.finalists-winners .block-user .ant-select-selection-item .value,
 }
 
 .actions .btn.icon:hover{
-    color: #52c41a;
+    color: #856404;
     background-color: #fff;
 }
 
@@ -1305,8 +1305,13 @@ input[type=range]::-webkit-slider-thumb {
     background-color: #fff;
 }
 
-.card .ant-spin-dot-item{
+.card .ant-spin-dot-item,
+#table-periods .ant-spin-dot-item{
     background-color: #0e51a7;
+}
+
+#table-periods .ant-spin{
+    margin-left: 10px
 }
 
 
@@ -1636,9 +1641,9 @@ input[type=range]::-webkit-slider-thumb {
     line-height: 18px;
     font-size: 14px;
     border-radius: 2px;
-    border-color: #52c41a;
+    border-color: #007bff;
     background: #fff;
-    color: #52c41a;
+    color: #007bff;
 }
 
 .btn.icon{
@@ -1650,9 +1655,9 @@ input[type=range]::-webkit-slider-thumb {
     width: auto;
     padding-left: 20px;
     padding-right: 20px;
-    border-color: #52c41a;
-    background: #52c41a;
-    color: #fff;
+    border-color: #fadb14;
+    background: #fadb14;
+    color: #856404;
 }
 
 .btn.btn-primary,
@@ -1661,19 +1666,20 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .table .btn.icon.edit:hover{
-    border-color: #52c41a;
-    background: #52c41a;
+    border-color: #007bff;
+    background: #007bff;
     color: #fff;
 }
-.table .btn.icon.trash{
-    border-color: #ff4d4f;
+.table .btn.icon.trash,
+.ant-btn-dangerous{
+    border-color: #fa7c7f;
     background: #fff;
-    color: #ff4d4f;
+    color: #fa7c7f;
 }
 .ant-btn-dangerous:hover,
 .table .btn.icon.trash:hover{
-    border-color: #ff4d4f;
-    background: #ff4d4f;
+    border-color: #fa7c7f;
+    background: #fa7c7f;
     color: #fff;
 }
 
@@ -1704,30 +1710,40 @@ input[type=range]::-webkit-slider-thumb {
 .btn.btn-primary,
 .modal-body .btn.btn-primary,
 .card.card-form .card-footer .btn.btn-primary{
-    border: 1px solid #52c41a;
-    background-color: #52c41a;
+    color: #fff;
+    border: 1px solid #007bff;
+    background-color: #007bff;
     transition-property: background-color, color; 
     transition-duration: 0.2s; 
     transition-timing-function: ease-out;
 }
+
+.btn.btn-primary.finalbt{
+    border-color: #fadb14;
+    background: #fadb14;
+    color: #856404;
+}
+
 .btn.btn-primary:hover,
 .modal-body .btn.btn-primary:hover,
 .card.card-form .card-footer .btn.btn-primary:hover{
-    color: #52c41a;
-    border: 1px solid #52c41a;
-    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    background-color: #f8f8f8;
 }
 
 .btn.btn-outline-secondary{
+    color: #007bff;
+    border: 1px solid #007bff;
     background-color: #fff;
 }
 
 .btn.btn-outline-secondary:hover,
 .modal-body .btn.btn-outline-secondary:hover,
 .card.card-form .card-footer .btn.btn-outline-secondary:hover{
-    color: #52c41a;
-    border: 1px solid #52c41a;
-    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
 }
 
 .card.card-form textarea,

@@ -479,6 +479,7 @@ class ListUser extends React.Component {
     Swal.fire({
       title: 'Você tem certeza?',
       text: 'Deseja remover o usuário desta equipe?',
+      icon: "warning",
       type: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Sim, deletar!',

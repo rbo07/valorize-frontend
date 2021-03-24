@@ -270,11 +270,6 @@ class ListPeriod extends React.Component {
         $('#cancelButton').click();
     }
 
-    highlight() {
-        let id = this.state.currentPeriod - 1;
-        $('tbody').find('tr:eq(' + id + ')').addClass('highlight');
-    }
-
 
     // Formata da Data vinda do Objeto
     formatDate(str) {
@@ -327,9 +322,7 @@ class ListPeriod extends React.Component {
                             'Sucesso!',
                             res.data.message,
                             'success'
-                        ).then((result) => {
-                            this.highlight()
-                        })
+                        )
                     }
                     else {
                         this.setState({ loading: false });
@@ -391,10 +384,6 @@ class ListPeriod extends React.Component {
                         <div class="col-md-6 actions text-right">
                             <button class="btn icon add" data-toggle="modal" data-target="#exampleModal">
                                 <FontAwesomeIcon icon={faPlus} size='sm' /> Adicionar Período
-                        </button>
-
-                            <button class="btn icon add" onClick={this.saveCurrentPeriod.bind(this)}>
-                                <FontAwesomeIcon icon={faSave} size='sm' /> Salvar Período Ativo <Spin size="small" spinning={this.state.loading} />
                             </button>
 
                             <button class="btn icon pdf" onClick={() => Print.printDocument("Períodos-de-Avaliação")} data-toggle="tooltip" title="Exportar PDF">
@@ -486,12 +475,16 @@ class ListPeriod extends React.Component {
         if (id == this.state.currentPeriod) {
             return (
                 <Switch defaultChecked={true} onChange={(checked: boolean) => {
-                    this.setState({ setCurrentPeriod: checked, currentPeriod: id });
+                    this.setState({ setCurrentPeriod: checked, currentPeriod: id }, () => {
+                        this.saveCurrentPeriod()
+                    });
                 }} />)
         } else {
             return (
                 <Switch defaultChecked={false} onChange={(checked: boolean) => {
-                    this.setState({ setCurrentPeriod: checked, currentPeriod: id });
+                    this.setState({ setCurrentPeriod: checked, currentPeriod: id }, () => {
+                        this.saveCurrentPeriod()
+                    });
                 }} />)
         }
     }
@@ -558,6 +551,7 @@ class ListPeriod extends React.Component {
                     <td>
                         <span class="label-mobile">Período Ativo</span>
                         {this.getSwitch(data.id)}
+                        <Spin size="small" spinning={this.state.loading} />
                     </td>
                     <td><span class="label-mobile">Data Inicial</span>{this.formatDate(data.period_initial_date)}</td>
                     <td><span class="label-mobile">Data Final</span>{this.formatDate(data.period_final_date)}</td>
@@ -577,6 +571,7 @@ class ListPeriod extends React.Component {
         Swal.fire({
             title: 'Você tem certeza?',
             text: 'Deseja remover este Período?',
+            icon: "warning",
             type: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sim, deletar!',
@@ -588,7 +583,7 @@ class ListPeriod extends React.Component {
                 Swal.fire(
                     'Ação Cancelada',
                     'Período mantido!',
-                    'warning'
+                    'info'
                 )
             }
         })

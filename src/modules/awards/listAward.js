@@ -416,6 +416,7 @@ class ListAward extends React.Component {
         Swal.fire({
             title: 'Você tem certeza?',
             text: 'Deseja remover este Prêmio?',
+            icon: "warning",
             type: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sim, deletar!',
@@ -427,7 +428,7 @@ class ListAward extends React.Component {
                 Swal.fire(
                     'Ação Cancelada',
                     'Prêmio mantido!',
-                    'warning'
+                    'info'
                 )
             }
         })
