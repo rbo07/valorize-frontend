@@ -52,7 +52,8 @@ class MyTeamEvaluation extends React.Component {
             message: "",
             success: null,
             finalSize: null,
-            loading: false
+            loading: false,
+            loadingFinalAction: false,
         }
     }
 
@@ -255,9 +256,14 @@ class MyTeamEvaluation extends React.Component {
             });
         }
     }
+    // VERIFICA SE MÉDIA VEM VAZIA
     getScoreAverage(count) {
         let data = this.state.usersAverages
-        return data[count]
+        if(data !== undefined){
+            return data[count]
+        } else {
+            return ''
+        }
     }
 
     loadFillData() {
@@ -376,7 +382,7 @@ class MyTeamEvaluation extends React.Component {
             return (
                 <div class="col-md-12">
                     <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendSave()}>
-                        Concluir Avaliação <Spin size="small" spinning={this.state.loading} />
+                        Concluir Avaliação <Spin size="small" spinning={this.state.loadingFinalAction} />
                 </button>
                     <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
                 </div>
@@ -401,6 +407,7 @@ class MyTeamEvaluation extends React.Component {
                 <ul class="user-criterions">
                     <div class="text-center">
                         <Spin size="large" spinning={this.state.loading} />
+                        <Spin size="large" spinning={this.state.loadingFinalAction} />
                     </div>
                     {this.loadFillData()}
                     {this.loadFillUnratedUsers()}
@@ -438,7 +445,7 @@ class MyTeamEvaluation extends React.Component {
             )
         } else {
 
-            this.setState({ loading: true });
+            this.setState({ loadingFinalAction: true });
             const datapost = []
             const periodId = this.state.periodId
             const url = baseURL + "/evaluation/" + periodId;
@@ -472,7 +479,7 @@ class MyTeamEvaluation extends React.Component {
                 .then(res => {
                     if (res.data.success === true) {
 
-                        this.setState({ loading: false });
+                        this.setState({ loadingFinalAction: false });
 
                         Swal.fire(
                             'Sucesso!',

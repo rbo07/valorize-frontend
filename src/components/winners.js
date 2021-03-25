@@ -64,7 +64,8 @@ class Winners extends React.Component {
             dataSendTie: [],
             noAward: false,
             sizes: [],
-            loading: false
+            loading: false,
+            loadingFinalAction: false,
 
         }
     }
@@ -152,7 +153,7 @@ class Winners extends React.Component {
         } else if (result.length !== 0 && this.state.loading == false) {
             return (
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendTiebreaker()}>Desempatar <Spin size="small" spinning={this.state.loading} /></button>
+                    <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendTiebreaker()}>Desempatar <Spin size="small" spinning={this.state.loadingFinalAction} /></button>
                     <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
                 </div>
             )
@@ -164,7 +165,7 @@ class Winners extends React.Component {
             if (this.state.loading == false) {
                 return (
                     <div class="col-md-12">
-                        <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendAward()}>Premiar <Spin size="small" spinning={this.state.loading} /></button>
+                        <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendAward()}>Premiar <Spin size="small" spinning={this.state.loadingFinalAction} /></button>
                         <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
                     </div>
                 )
@@ -484,6 +485,7 @@ class Winners extends React.Component {
 
                 <div class="text-center">
                     <Spin size="large" spinning={this.state.loading} />
+                    <Spin size="large" spinning={this.state.loadingFinalAction} />
                 </div>
 
                 <ul class="finalists-winners">
@@ -538,7 +540,7 @@ class Winners extends React.Component {
             )
         } else {
 
-            this.setState({ loading: true });
+            this.setState({ loadingFinalAction: true });
 
             const datapost = []
             const url = baseURL + "/tiebreak/add";
@@ -574,7 +576,7 @@ class Winners extends React.Component {
                 .then(res => {
                     if (res.data.success === true) {
 
-                        this.setState({ loading: false });
+                        this.setState({ loadingFinalAction: false });
 
                         Swal.fire(
                             'Sucesso!',
@@ -619,7 +621,7 @@ class Winners extends React.Component {
 
     sendSaveAward() {
 
-        this.setState({ loading: true });
+        this.setState({ loadingFinalAction: true });
         const datapost = []
         const url = baseURL + "/award/add"
 
@@ -645,7 +647,7 @@ class Winners extends React.Component {
             .then(res => {
                 if (res.data.success === true) {
 
-                    this.setState({ loading: false });
+                    this.setState({ loadingFinalAction: false });
 
                     Swal.fire(
                         'Sucesso!',

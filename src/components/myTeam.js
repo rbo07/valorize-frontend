@@ -144,7 +144,7 @@ class MyTeam extends React.Component {
     }
     loadFillData() {
         const path = this.getPath()
-        if (this.state.listMyTeam == null || this.state.listMyTeam == '') {
+        if ((this.state.listMyTeam == null || this.state.listMyTeam == '') && this.state.loading == false) {
             return (
                 <div class="col-md-12">
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
