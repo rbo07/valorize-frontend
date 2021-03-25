@@ -115,39 +115,39 @@ class Menu extends React.Component {
 
             return (
                 <ul>
-                    <li class="menu-item"><Link class="link-menu " to="/admin/dashboard" data-toggle="tooltip" data-placement="right" title="Dashboard"> <FontAwesomeIcon icon={faTh} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/admin/ratings" data-toggle="tooltip" data-placement="right" title="Gerenciar Avaliações" ><FontAwesomeIcon icon={faChartBar} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/admin/tiebreakers" data-toggle="tooltip" data-placement="right" title="Gerenciar Critérios de Desempate" ><FontAwesomeIcon icon={faBalanceScale} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu " to="/admin/awards" data-toggle="tooltip" data-placement="right" title="Gerenciar Prêmios" ><FontAwesomeIcon icon={faMedal} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/admin/criterions" data-toggle="tooltip" data-placement="right" title="Gerenciar Critérios" ><FontAwesomeIcon icon={faSpellCheck} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/admin/periods" data-toggle="tooltip" data-placement="right" title="Gerenciar Períodos" ><FontAwesomeIcon icon={faCalendarAlt} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/admin/users" data-toggle="tooltip" data-placement="right" title="Gerenciar Usuários" ><FontAwesomeIcon icon={faUserFriends} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/admin/teams" data-toggle="tooltip" data-placement="right" title="Gerenciar Equipes" ><FontAwesomeIcon icon={faUsers} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/admin/roles" data-toggle="tooltip" data-placement="right" title="Gerenciar Funções" ><FontAwesomeIcon icon={faWrench} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/admin/reports" data-toggle="tooltip" data-placement="right" title="Relatórios" ><FontAwesomeIcon icon={faChartLine} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to={"/admin/update/" + currentUser} data-toggle="tooltip" data-placement="right" title="Meus Dados" ><FontAwesomeIcon icon={faAddressCard} /></Link> </li>
+                    <li class="menu-item lk-dashboard"><Link class="link-menu" to="/admin/dashboard" data-toggle="tooltip" data-placement="right" title="Dashboard"> <FontAwesomeIcon icon={faTh} /></Link> </li>
+                    <li class="menu-item lk-rating"><Link class="link-menu" to="/admin/ratings" data-toggle="tooltip" data-placement="right" title="Gerenciar Avaliações" ><FontAwesomeIcon icon={faChartBar} /></Link> </li>
+                    <li class="menu-item lk-tiebreak"><Link class="link-menu" to="/admin/tiebreakers" data-toggle="tooltip" data-placement="right" title="Gerenciar Critérios de Desempate" ><FontAwesomeIcon icon={faBalanceScale} /></Link> </li>
+                    <li class="menu-item lk-award"><Link class="link-menu" to="/admin/awards" data-toggle="tooltip" data-placement="right" title="Gerenciar Prêmios" ><FontAwesomeIcon icon={faMedal} /></Link> </li>
+                    <li class="menu-item lk-criterion"><Link class="link-menu" to="/admin/criterions" data-toggle="tooltip" data-placement="right" title="Gerenciar Critérios" ><FontAwesomeIcon icon={faSpellCheck} /></Link> </li>
+                    <li class="menu-item lk-period"><Link class="link-menu" to="/admin/periods" data-toggle="tooltip" data-placement="right" title="Gerenciar Períodos" ><FontAwesomeIcon icon={faCalendarAlt} /></Link> </li>
+                    <li class="menu-item lk-user"><Link class="link-menu" to="/admin/users" data-toggle="tooltip" data-placement="right" title="Gerenciar Usuários" ><FontAwesomeIcon icon={faUserFriends} /></Link> </li>
+                    <li class="menu-item lk-team"><Link class="link-menu" to="/admin/teams" data-toggle="tooltip" data-placement="right" title="Gerenciar Equipes" ><FontAwesomeIcon icon={faUsers} /></Link> </li>
+                    <li class="menu-item lk-role"><Link class="link-menu" to="/admin/roles" data-toggle="tooltip" data-placement="right" title="Gerenciar Funções" ><FontAwesomeIcon icon={faWrench} /></Link> </li>
+                    <li class="menu-item lk-report"><Link class="link-menu" to="/admin/reports" data-toggle="tooltip" data-placement="right" title="Relatórios" ><FontAwesomeIcon icon={faChartLine} /></Link> </li>
+                    <li class="menu-item lk-update"><Link class="link-menu" to={"/admin/update/" + currentUser} data-toggle="tooltip" data-placement="right" title="Meus Dados" ><FontAwesomeIcon icon={faAddressCard} /></Link> </li>
                 </ul>
             )
 
         } else if (currentRoleUser == 2) {
             return (
                 <ul>
-                    <li class="menu-item"><Link class="link-menu" to={"/leader/dashboard"} data-toggle="tooltip" data-placement="right" title="Dashboard" ><FontAwesomeIcon icon={faTh} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/evaluation" onClick={() => {window.location.href="/evaluation"}} data-toggle="tooltip" data-placement="right" title="Avaliar Equipe" ><FontAwesomeIcon icon={faStar} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/winners" data-toggle="tooltip" data-placement="right" title="Premiar Equipe" ><FontAwesomeIcon icon={faTrophy} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/ratings" data-toggle="tooltip" data-placement="right" title="Gerenciar Avaliações" ><FontAwesomeIcon icon={faChartBar} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/users" data-toggle="tooltip" data-placement="right" title="Gerenciar Equipe" ><FontAwesomeIcon icon={faUsers} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to={"/leader/update/" + currentUser} data-toggle="tooltip" data-placement="right" title="Meus Dados" ><FontAwesomeIcon icon={faAddressCard} /></Link> </li>
+                    <li class="menu-item lk-dashboard"><Link class="link-menu" to={"/leader/dashboard"} data-toggle="tooltip" data-placement="right" title="Dashboard" ><FontAwesomeIcon icon={faTh} /></Link> </li>
+                    <li class="menu-item lk-evaluation"><Link class="link-menu" to="/evaluation" onClick={() => {window.location.href="/evaluation"}} data-toggle="tooltip" data-placement="right" title="Avaliar Equipe" ><FontAwesomeIcon icon={faStar} /></Link> </li>
+                    <li class="menu-item lk-winners"><Link class="link-menu" to="/winners" data-toggle="tooltip" data-placement="right" title="Premiar Equipe" ><FontAwesomeIcon icon={faTrophy} /></Link> </li>
+                    <li class="menu-item lk-rating"><Link class="link-menu" to="/ratings" data-toggle="tooltip" data-placement="right" title="Gerenciar Avaliações" ><FontAwesomeIcon icon={faChartBar} /></Link> </li>
+                    <li class="menu-item lk-user"><Link class="link-menu" to="/users" data-toggle="tooltip" data-placement="right" title="Gerenciar Equipe" ><FontAwesomeIcon icon={faUsers} /></Link> </li>
+                    <li class="menu-item lk-update"><Link class="link-menu" to={"/leader/update/" + currentUser} data-toggle="tooltip" data-placement="right" title="Meus Dados" ><FontAwesomeIcon icon={faAddressCard} /></Link> </li>
                 </ul>
             )
 
         } else if (currentRoleUser == 3 || currentRoleUser == undefined) {
             return (
                 <ul>
-                    <li class="menu-item"><Link class="link-menu" to={"/dashboard"} data-toggle="tooltip" data-placement="right" title="Dashboard" ><FontAwesomeIcon icon={faTh} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to={"/update/" + currentUser} data-toggle="tooltip" data-placement="right" title="Meus Dados" ><FontAwesomeIcon icon={faAddressCard} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu " to="/awards/view" data-toggle="tooltip" data-placement="right" title="Prêmios para o Período" ><FontAwesomeIcon icon={faMedal} /></Link> </li>
-                    <li class="menu-item"><Link class="link-menu" to="/criterions/view" data-toggle="tooltip" data-placement="right" title="Critérios para o Período" ><FontAwesomeIcon icon={faSpellCheck} /></Link> </li>
+                    <li class="menu-item lk-dashboard"><Link class="link-menu" to={"/dashboard"} data-toggle="tooltip" data-placement="right" title="Dashboard" ><FontAwesomeIcon icon={faTh} /></Link> </li>
+                    <li class="menu-item lk-award"><Link class="link-menu" to="/awards/view" data-toggle="tooltip" data-placement="right" title="Prêmios para o Período" ><FontAwesomeIcon icon={faMedal} /></Link> </li>
+                    <li class="menu-item lk-criterion"><Link class="link-menu" to="/criterions/view" data-toggle="tooltip" data-placement="right" title="Critérios para o Período" ><FontAwesomeIcon icon={faSpellCheck} /></Link> </li>
+                    <li class="menu-item lk-update"><Link class="link-menu" to={"/update/" + currentUser} data-toggle="tooltip" data-placement="right" title="Meus Dados" ><FontAwesomeIcon icon={faAddressCard} /></Link> </li>
                 </ul>
             )
         }

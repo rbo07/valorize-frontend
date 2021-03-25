@@ -1,6 +1,7 @@
 //Import React
 import React from 'react';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 //Import Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -92,6 +93,7 @@ class ListPeriod extends React.Component {
         this.loadPeriods();
         this.awardsLookUp();
         this.criterionsLookUp();
+        ActiveMenu.setActive('.lk-period');
 
 
         // Captura Data Inicial do DatePicker Calendar
@@ -126,6 +128,10 @@ class ListPeriod extends React.Component {
         $(".inputDate").datepicker({ dateFormat: "yy-mm-dd" });
 
     }
+
+    truncate(str, n) {
+        return (str.length > n) ? str.substr(0, n - 1) + ' ...' : str;
+    };
 
     // Adiciona Prêmios no Array
     onSelectAwardLookUp(selectedList, selectedItem) {
@@ -547,7 +553,7 @@ class ListPeriod extends React.Component {
             return (
                 <tr>
                     <td class="text-center"><span class="label-mobile">ID</span>{data.id}</td>
-                    <td><span class="label-mobile">Nome do Período</span>{data.period_name}</td>
+                    <td><span class="label-mobile">Nome do Período</span>{this.truncate(data.period_name, 30)}</td>
                     <td>
                         <span class="label-mobile">Período Ativo</span>
                         {this.getSwitch(data.id)}

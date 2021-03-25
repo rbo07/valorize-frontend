@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../services/setMenu";
 
 //import Axios
 import axios from 'axios';
@@ -71,6 +72,7 @@ class Winners extends React.Component {
     componentDidMount() {
         this.loadingFinalistsWinners();
         this.tiebreakersLookUp();
+        ActiveMenu.setActive('.lk-winners');
     }
 
     tiebreakersLookUp() {
@@ -147,7 +149,7 @@ class Winners extends React.Component {
         if (data == null || this.state.noAward == true) {
             return ""
 
-        } else if (result.length !== 0) {
+        } else if (result.length !== 0 && this.state.loading == false) {
             return (
                 <div class="col-md-12">
                     <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendTiebreaker()}>Desempatar <Spin size="small" spinning={this.state.loading} /></button>
@@ -159,12 +161,14 @@ class Winners extends React.Component {
             return ""
 
         } else {
-            return (
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendAward()}>Premiar <Spin size="small" spinning={this.state.loading} /></button>
-                    <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
-                </div>
-            )
+            if (this.state.loading == false) {
+                return (
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendAward()}>Premiar <Spin size="small" spinning={this.state.loading} /></button>
+                        <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
+                    </div>
+                )
+            }
         }
     }
     getEvaluatorId(data) {
@@ -498,17 +502,17 @@ class Winners extends React.Component {
     checkValidation() {
         let result = true
         let criterions = document.querySelectorAll('[id^="c-"]');
-        
+
         for (const criterion of criterions.values()) {
             let temp = []
             let users = criterion.querySelectorAll('[id^="user-"]');
-            
+
             for (const user of users.values()) {
-                
+
                 let el_user_id = user.id
                 let selection = $('#' + criterion.id).find('#' + el_user_id).find('.ant-select-selection-item').attr('title')
 
-                if(selection == undefined){
+                if (selection == undefined) {
                     temp.push(selection)
                 }
 

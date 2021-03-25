@@ -1,6 +1,7 @@
 //Import React
 import React from 'react';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 //Import Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -80,6 +81,7 @@ class ListRatings extends React.Component {
         this.loadRatings();
         this.periodsLookUp();
         this.criterionsLookUp();
+        ActiveMenu.setActive('.lk-rating');
     }
 
     loadRatings() {
@@ -146,7 +148,7 @@ class ListRatings extends React.Component {
     }
 
     turnDataUser(obj) {
-        if (obj !== null) return obj.user_name
+        if (obj !== null) return this.truncate(obj.user_name, 30)
     }
 
     // turnDataAward(obj) {
@@ -154,11 +156,11 @@ class ListRatings extends React.Component {
     // }
 
     turnDataPeriod(obj) {
-        if (obj !== null) return obj.period_name
+        if (obj !== null) return this.truncate(obj.period_name, 20)
     }
 
     turnDataCriterion(obj) {
-        if (obj !== null) return obj.criterion_name
+        if (obj !== null) return this.truncate(obj.criterion_name, 20)
     }
 
     turnDataTiebreak(obj) {

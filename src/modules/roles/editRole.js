@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserHistory } from 'history';
+import ActiveMenu from "../../services/setMenu";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -37,6 +38,7 @@ class EditRole extends React.Component {
     }
     componentDidMount() {
         this.loadDataEditRole();
+        ActiveMenu.setActive('.lk-role');
     }
 
     loadDataEditRole() {

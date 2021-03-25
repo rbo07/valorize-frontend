@@ -1,5 +1,6 @@
 //Import React
 import React from 'react';
+import ActiveMenu from "../../services/setMenu";
 
 import { baseURL } from '../../services/api';
 
@@ -55,6 +56,7 @@ class AwardsView extends React.Component {
     componentDidMount() {
         this.awardsPeriod();
         this.periodsLookUp();
+        ActiveMenu.setActive('.lk-award');
     }
 
     truncate(str, n) {

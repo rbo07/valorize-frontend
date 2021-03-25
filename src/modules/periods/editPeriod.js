@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserHistory } from 'history';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -63,6 +64,7 @@ class EditPeriod extends React.Component {
         this.loadDataEditPeriod();
         this.awardsLookUp();
         this.criterionsLookUp();
+        ActiveMenu.setActive('.lk-period');
 
         // Captura Data Inicial do DatePicker Calendar
         $("#inputPeriodInitialDate").change(function () {

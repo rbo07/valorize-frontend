@@ -1,6 +1,7 @@
 //Import React
 import React from 'react';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 //Import Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -63,7 +64,12 @@ class ListRole extends React.Component {
 
     componentDidMount() {
         this.loadRoles();
+        ActiveMenu.setActive('.lk-role');
     }
+
+    truncate(str, n) {
+        return (str.length > n) ? str.substr(0, n - 1) + ' ...' : str;
+    };
 
     handlePageClick = (e) => {
         const selectedPage = e.selected;
@@ -240,9 +246,9 @@ class ListRole extends React.Component {
             return (
                 <tr>
                     <td class="text-center"><span class="label-mobile">ID</span>{data.id}</td>
-                    <td><span class="label-mobile">Nome da Função</span>{data.role_name}</td>
+                    <td><span class="label-mobile">Nome da Função</span>{this.truncate(data.role_name, 40)}</td>
                     <td><span class="label-mobile">Nível de Acesso</span>{data.role_access}</td>
-                    <td><span class="label-mobile">Descrição</span>{data.role_description}</td>
+                    <td><span class="label-mobile">Descrição</span>{this.truncate(data.role_description, 40)}</td>
                     <td>
                         <span class="label-mobile">Ações</span>
                         <Link title="Editar Função" class="btn icon edit" to={"/admin/roles/edit/" + data.id} >

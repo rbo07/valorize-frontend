@@ -1,4 +1,5 @@
 import React from 'react';
+import ActiveMenu from "../services/setMenu";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -35,6 +36,7 @@ class Reports extends React.Component {
 
     componentDidMount() {
         this.loadDataAverage();
+        ActiveMenu.setActive('.lk-report');
     }
 
     loadDataAverage() {

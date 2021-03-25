@@ -1,6 +1,7 @@
 //Import React
 import React from 'react';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 //Import Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -73,7 +74,12 @@ class ListTiebreaker extends React.Component {
 
     componentDidMount() {
         this.loadTiebreakers();
+        ActiveMenu.setActive('.lk-tiebreak');
     }
+
+    truncate(str, n) {
+        return (str.length > n) ? str.substr(0, n - 1) + ' ...' : str;
+    };
 
     handlePageClick = (e) => {
         const selectedPage = e.selected;
@@ -289,7 +295,7 @@ class ListTiebreaker extends React.Component {
             return (
                 <tr>
                     <td class="text-center"><span class="label-mobile">ID</span>{data.id}</td>
-                    <td><span class="label-mobile">Nome do Critério de Desempate</span>{data.tiebreaker_name}</td>
+                    <td><span class="label-mobile">Nome do Critério de Desempate</span>{this.truncate(data.tiebreaker_name, 50)}</td>
                     <td class="text-center">
                         <span class="label-mobile">Peso</span>
                         <Badge className="site-badge-count-109" count={100} overflowCount={data.tiebreaker_weight} style={{ backgroundColor: '#52c41a' }} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -59,6 +60,7 @@ class UpdateUser extends React.Component {
   componentDidMount() {
     this.loadEditView()
     const upload = new FileUploadWithPreview("photoUploader");
+    ActiveMenu.setActive('.lk-update');
   }
 
   // Validar email

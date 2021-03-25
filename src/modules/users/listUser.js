@@ -1,6 +1,7 @@
 //Import React
 import React from 'react';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 //Import Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -79,7 +80,12 @@ class ListUser extends React.Component {
     this.loadUser();
     this.rolesLookUp();
     this.usersLookUp();
+    ActiveMenu.setActive('.lk-user');
   }
+
+  truncate(str, n) {
+    return (str.length > n) ? str.substr(0, n - 1) + ' ...' : str;
+  };
 
   loadUser() {
     this.setState({ loading: true });
@@ -416,7 +422,7 @@ class ListUser extends React.Component {
 
   turnDataRole(obj) {
     if (obj !== null) {
-      return obj.role_name
+      return this.truncate(obj.role_name, 20)
     } else {
       return 'Sem função cadastrada'
     }
@@ -429,10 +435,10 @@ class ListUser extends React.Component {
         return (
           <tr>
             <td class="text-center"><span class="label-mobile">ID</span>{data.id}</td>
-            <td><span class="label-mobile">Nome</span>{data.user_name}</td>
+            <td><span class="label-mobile">Nome</span>{this.truncate(data.user_name, 30)}</td>
             <td><span class="label-mobile">Função</span>{this.turnDataRole(data.roles)}</td>
-            <td><span class="label-mobile">Equipe</span>{data.teams.map((i) => { return (i.team_name) })}</td>
-            <td><span class="label-mobile">Email</span>{data.user_email}</td>
+            <td><span class="label-mobile">Equipe</span>{data.teams.map((i) => { return (this.truncate(i.team_name, 20)) })}</td>
+            <td><span class="label-mobile">Email</span>{this.truncate(data.user_email, 30)}</td>
             {/* <td>{data.user_address}</td>
             <td>{data.user_phone}</td> */}
             <td class="text-center"><span class="label-mobile">Online</span><span class={this.checkIfOnline(data.user_islogged)}></span></td>
@@ -454,9 +460,9 @@ class ListUser extends React.Component {
         return (
           <tr>
             <td class="text-center"><span class="label-mobile">ID</span>{data.id}</td>
-            <td><span class="label-mobile">Nome</span>{data.user_name}</td>
+            <td><span class="label-mobile">Nome</span>{this.truncate(data.user_name, 30)}</td>
             <td><span class="label-mobile">Função</span>{this.turnDataRole(data.roles)}</td>
-            <td><span class="label-mobile">Email</span>{data.user_email}</td>
+            <td><span class="label-mobile">Email</span>{this.truncate(data.user_email, 30)}</td>
             {/* <td>{data.user_address}</td>
             <td>{data.user_phone}</td> */}
             <td>

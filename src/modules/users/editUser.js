@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserHistory } from 'history';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -77,6 +78,7 @@ class EditUser extends React.Component {
     this.rolesLookUp();
     this.teamsLookUp();
     const upload = new FileUploadWithPreview("photoUploader");
+    ActiveMenu.setActive('.lk-user');
   }
 
   insertPassword() {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../services/setMenu";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -23,6 +24,10 @@ class TeamDetail extends React.Component {
             leader_name: '',
             loading: false
         }
+    }
+
+    componentDidMount() {
+        ActiveMenu.setActive('.lk-dashboard');
     }
 
 

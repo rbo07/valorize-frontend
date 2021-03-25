@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { createBrowserHistory } from 'history';
+import ActiveMenu from "../services/setMenu";
 
 
 //import Axios
@@ -59,6 +60,7 @@ class MyTeamEvaluation extends React.Component {
         const self = this
         this.loadingMyTeam();
         this.resizeCriterions();
+        ActiveMenu.setActive('.lk-evaluation');
         
         //Calcula Média
         $(document).on('input', '.custom-range', function () {
@@ -370,7 +372,7 @@ class MyTeamEvaluation extends React.Component {
     getButtons() {
         if (this.state.listMyTeam == null) {
             return ""
-        } else {
+        } else if (this.state.loading == false) {
             return (
                 <div class="col-md-12">
                     <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendSave()}>

@@ -1,5 +1,6 @@
 //Import React
 import React from 'react';
+import ActiveMenu from "../../services/setMenu";
 
 import { baseURL } from '../../services/api';
 //Import Bootstrap
@@ -51,6 +52,7 @@ class CriterionsView extends React.Component {
     componentDidMount() {
         this.criterionsPeriod();
         this.periodsLookUp();
+        ActiveMenu.setActive('.lk-criterion');
     }
 
 

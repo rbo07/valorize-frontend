@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import ActiveMenu from "../services/setMenu";
 
 //import Axios
 import axios from 'axios';
@@ -49,6 +50,7 @@ class DashboardLeader extends React.Component {
 
     componentDidMount() {
         this.periodsLookUp();
+        ActiveMenu.setActive('.lk-dashboard');
     }
 
     periodsLookUp() {

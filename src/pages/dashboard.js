@@ -1,4 +1,5 @@
 import React from 'react';
+import ActiveMenu from "../services/setMenu";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -15,6 +16,10 @@ import UserAwards from "../components/userAwards";
 import Ranking from "../components/ranking";
 
 class Dashboard extends React.Component {
+
+    componentDidMount() {
+        ActiveMenu.setActive('.lk-dashboard');
+    }
 
     render() {
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserHistory } from 'history';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -55,6 +56,7 @@ class EditCriterion extends React.Component {
         this.loadDataEditCriterion();
         this.awardsLookUp();
         this.periodsLookUp();
+        ActiveMenu.setActive('.lk-criterion');
     }
     checkIfAwardIDisNull(data) {
         if (data !== null) { return data.id } else { return null }

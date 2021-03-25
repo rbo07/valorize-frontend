@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserHistory } from 'history';
+import ActiveMenu from "../services/setMenu";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -39,6 +40,7 @@ class UserDetail extends React.Component {
 
     componentDidMount() {
         this.loadDataEditUser();
+        ActiveMenu.setActive('.lk-dashboard');
     }
 
     checkRoleName(data) {
@@ -166,7 +168,6 @@ class UserDetail extends React.Component {
                         <CumulativeAverage userId={this.props.match.params.userId} />
                     </div>
                 </div>
-                <button class="btn btn-outline-secondary" onClick={() => history.goBack()}>Voltar</button>
             </div>
         )
     }

@@ -1,6 +1,7 @@
 //Import React
 import React from 'react';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 //Import Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -66,7 +67,12 @@ class ListTeam extends React.Component {
     componentDidMount() {
         this.loadTeams();
         this.usersLookUp();
+        ActiveMenu.setActive('.lk-team');
     }
+
+    truncate(str, n) {
+        return (str.length > n) ? str.substr(0, n - 1) + ' ...' : str;
+    };
 
     handlePageClick = (e) => {
         const selectedPage = e.selected;
@@ -249,7 +255,7 @@ class ListTeam extends React.Component {
     }
 
     checkNull(data) {
-        if (data !== null) return data.user_name
+        if (data !== null) return this.truncate(data.user_name, 30)
         else return 'Sem líder'
     }
 
@@ -308,9 +314,9 @@ class ListTeam extends React.Component {
             return (
                 <tr>
                     <td class="text-center"><span class="label-mobile">ID</span>{data.id}</td>
-                    <td><span class="label-mobile">Nome da Equipe</span>{data.team_name}</td>
+                    <td><span class="label-mobile">Nome da Equipe</span>{this.truncate(data.team_name,30)}</td>
                     <td><span class="label-mobile">Líder</span>{this.checkNull(data.leader)}</td>
-                    <td><span class="label-mobile">Descrição</span>{data.team_description}</td>
+                    <td><span class="label-mobile">Descrição</span>{this.truncate(data.team_description, 40)}</td>
                     <td>
                         <span class="label-mobile">Ações</span>
                         <Link title="Editar Equipe" class="btn icon edit" to={"/admin/teams/edit/" + data.id} >

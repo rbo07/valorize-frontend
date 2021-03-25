@@ -1,6 +1,7 @@
 //Import React
 import React from 'react';
 import { Link } from "react-router-dom";
+import ActiveMenu from "../../services/setMenu";
 
 //Import Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -75,6 +76,7 @@ class ListCriterion extends React.Component {
         this.loadCriterions();
         this.awardsLookUp();
         this.periodsLookUp();
+        ActiveMenu.setActive('.lk-criterion');
     }
 
     handlePageClick = (e) => {
@@ -178,11 +180,11 @@ class ListCriterion extends React.Component {
     }
 
     turnDataAward(obj) {
-        if (obj !== null) return obj.award_name
+        if (obj !== null) return this.truncate(obj.award_name, 20)
     }
 
     turnDataPeriod(obj) {
-        if (obj !== null) return obj.period_name
+        if (obj !== null) return this.truncate(obj.period_name, 20)
     }
 
     truncate(str, n) {
@@ -392,10 +394,10 @@ class ListCriterion extends React.Component {
             return (
                 <tr>
                     <td class="text-center"><span class="label-mobile">ID</span>{data.id}</td>
-                    <td><span class="label-mobile">Nome do Critério</span>{data.criterion_name}</td>
+                    <td><span class="label-mobile">Nome do Critério</span>{this.truncate(data.criterion_name, 30)}</td>
                     <td><span class="label-mobile">Prêmio Associado</span>{this.turnDataAward(data.awards)}</td>
                     <td><span class="label-mobile">Período Associado</span>{this.turnDataPeriod(data.periods)}</td>
-                    <td><span class="label-mobile">Descrição do Critério</span>{this.truncate(data.criterion_description, 40)}</td>
+                    <td><span class="label-mobile">Descrição do Critério</span>{this.truncate(data.criterion_description, 35)}</td>
                     <td>
                         <span class="label-mobile">Ações</span>
                         {this.renderEditButton(data.id)}

@@ -1,4 +1,5 @@
 import React from 'react';
+import ActiveMenu from "../../services/setMenu";
 
 import { createBrowserHistory } from 'history';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -67,6 +68,7 @@ class AddUser extends React.Component {
     this.rolesLookUp();
     this.teamsLookUp();
     const upload = new FileUploadWithPreview("photoUploader");
+    ActiveMenu.setActive('.lk-user');
   }
 
   // Validar email

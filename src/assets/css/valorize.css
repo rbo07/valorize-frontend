@@ -252,6 +252,13 @@ label span.label-required,
     transition-duration: 0.2s; 
     transition-timing-function: ease-out;
 }
+
+.Menu .menu-item.active{
+    border: 1px solid #fff;
+    background: aliceblue;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+}
+
 .Menu .menu-item .link-menu{
     width: 40px;
     height: 40px;
