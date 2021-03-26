@@ -83,7 +83,8 @@ class ListPeriod extends React.Component {
             offset: 0,
             perPage: 7,
             currentPage: 0,
-            loading: false
+            loading: false,
+            loadingFinalAction: false,
         }
     }
 
@@ -309,7 +310,7 @@ class ListPeriod extends React.Component {
                 'warning'
             )
         } else {
-            this.setState({ loading: true });
+            this.setState({ loadingFinalAction: true });
             const token = 'Bearer ' + localStorage.getItem('TOKEN_KEY');
             const datapost = {
                 period_id: this.state.currentPeriod
@@ -323,7 +324,7 @@ class ListPeriod extends React.Component {
             })
                 .then(res => {
                     if (res.data.success === true) {
-                        this.setState({ loading: false });
+                        this.setState({ loadingFinalAction: false });
                         Swal.fire(
                             'Sucesso!',
                             res.data.message,
@@ -331,7 +332,7 @@ class ListPeriod extends React.Component {
                         )
                     }
                     else {
-                        this.setState({ loading: false });
+                        this.setState({ loadingFinalAction: false });
                         Swal.fire(
                             'Erro!',
                             res.data.message,
@@ -557,7 +558,7 @@ class ListPeriod extends React.Component {
                     <td>
                         <span class="label-mobile">Período Ativo</span>
                         {this.getSwitch(data.id)}
-                        <Spin size="small" spinning={this.state.loading} />
+                        <Spin size="small" spinning={this.state.loadingFinalAction} />
                     </td>
                     <td><span class="label-mobile">Data Inicial</span>{this.formatDate(data.period_initial_date)}</td>
                     <td><span class="label-mobile">Data Final</span>{this.formatDate(data.period_final_date)}</td>
