@@ -120,13 +120,13 @@ class Reports extends React.Component {
                         <div class='row'>
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                 <div class="card">
-                                    <label>Desempenho por Equipe <span>| Últimos Períodos</span></label>
+                                    <label>Desempenho por Equipe <span>| Todos os Períodos</span></label>
                                     <ChartLine />
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                 <div class="card">
-                                    <label>Desempenho Geral <span>| Últimos Períodos</span></label>
+                                    <label>Desempenho Geral <span>| Todos os Períodos</span></label>
                                     <ChartArea />
                                 </div>
                             </div>

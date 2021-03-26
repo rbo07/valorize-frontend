@@ -46,7 +46,7 @@ class Dashboard extends React.Component {
                             </div>
                             <div class='col-md-6'>
                                 <div class="card awards">
-                                    <label>Prêmios Conquistados <span>| Últimos Períodos</span></label>
+                                    <label>Prêmios Conquistados <span>| Todos os Períodos</span></label>
                                     <UserAwards />
                                 </div>
                             </div>
