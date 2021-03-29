@@ -24,7 +24,7 @@ class Dashboard extends React.Component {
     render() {
 
         return (
-            <div class='Content'>
+            <div class={'Content ' + ActiveMenu.getClassMenu()}>
                 <Menu />
                 <Header />
                 <div id="dashboard" class="row">

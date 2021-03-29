@@ -255,7 +255,7 @@ class ListAward extends React.Component {
         return (
             <div>
                 <Menu />
-                <div id="Prêmios" class='Content'>
+                <div id="Prêmios" class={'Content ' + ActiveMenu.getClassMenu()}>
                     <Header />
                     <div class="row">
                         <div class="col-md-6">

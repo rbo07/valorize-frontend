@@ -215,7 +215,7 @@ class CriterionsView extends React.Component {
     render() {
         const { Option } = Select;
         return (
-            <div class='Content criterions-view' >
+            <div class={'Content criterions-view ' + ActiveMenu.getClassMenu()} >
                 <Menu />
                 <Header />
                 <div class="row">

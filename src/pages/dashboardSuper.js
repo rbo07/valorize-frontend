@@ -173,7 +173,7 @@ class DashboardSuper extends React.Component {
     render() {
         const { Option } = Select;
         return (
-            <div class='Content content-super'>
+            <div class={'Content content-super ' + ActiveMenu.getClassMenu()}>
                 <Menu />
                 <Header />
                 <div id="dashboard" class="row">

@@ -82,6 +82,10 @@ label span.label-required,
 
 
 /* ////// HEADER ////// */
+.Header.beginner{
+    padding: 15px 25px 15px 225px;
+}
+
 .Header {
     width: 100%;
     height: 100px;
@@ -131,6 +135,10 @@ label span.label-required,
 }
 
 /* /// STICKY HEADER /// */
+.sticky.beginner{
+    padding: 9px 25px 9px 225px;
+}
+
 .sticky {
     height: 70px;
     position: fixed;
@@ -223,6 +231,13 @@ label span.label-required,
     display: none;
 }
 
+.Menu.beginner{
+    width: 180px;
+    /* transition-property: width; 
+    transition-duration: 0.2s; 
+    transition-timing-function: ease-out; */
+}
+
 .Menu{
     width: 80px;
     height: 100%;
@@ -232,10 +247,17 @@ label span.label-required,
     left: 0;
     text-align: center;
     background: #f8f8f8;
+    /* transition-property: width; 
+    transition-duration: 0.2s; 
+    transition-timing-function: ease-out; */
 }
 
 .MenuMobile{
     display: none;
+}
+
+.Menu.beginner .menu-item{
+    margin: 0 auto 10px 20px;
 }
 
 .Menu .menu-item{
@@ -253,10 +275,64 @@ label span.label-required,
     transition-timing-function: ease-out;
 }
 
+/* Label Beginner*/
+.Menu .menu-item .label-beginner{
+    display: none;
+}
+
+.Menu.beginner .menu-item .label-beginner{
+    display: inline-block;
+    margin-left: 25px;
+    vertical-align: top;
+    position: absolute;
+    text-align: left;
+    line-height: 40px;
+}
+
+.Menu .bt-collapse{
+    width: 40px;
+    height: 40px;
+    line-height: 39px;
+    display: inline-block;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    color: #1890ff;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid #f2f2f2;
+    background-color: #f7f7f7;
+    transition-property: background-color; 
+    transition-duration: 0.2s; 
+    transition-timing-function: ease-out;
+}
+.Menu .bt-collapse:hover{
+    background-color: #f2f2f2;
+}
+
+.Menu .bt-collapse.bt-collapse-left{
+    display: none;
+}
+.Menu.beginner .bt-collapse.bt-collapse-left{
+    display: inline-block;
+}
+.Menu .bt-collapse.bt-collapse-right{
+    display: inline-block;
+}
+.Menu.beginner .bt-collapse.bt-collapse-right{
+    display: none;
+}
+
+
 .Menu .menu-item.active{
     border: 1px solid #fff;
     background: aliceblue;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+}
+.Menu.beginner .menu-item .link-menu{
+    width: 140px;
+    text-align: left;
+    padding-left: 12px;
 }
 
 .Menu .menu-item .link-menu{
@@ -272,9 +348,14 @@ label span.label-required,
     padding: 0;
     margin-left: 80px;
 }
+
+.Content.beginner{
+    padding: 150px 50px 50px 225px;
+}
+
 .Content{
-    min-height: 700px;
     padding: 150px 50px 50px 125px;
+    min-height: 700px;
     color: #333;
     background: #037ed3;
 }
@@ -794,6 +875,10 @@ ul.finalists-winners .block-user .ant-select-selection-item .value,
     padding: 0;
     border: none;
     background: none;
+}
+
+.bt-edit-avatar{
+    float: right;
 }
 
 

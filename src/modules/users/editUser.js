@@ -266,7 +266,7 @@ class EditUser extends React.Component {
 
     return (
 
-      <div class='Content'>
+      <div class={'Content ' + ActiveMenu.getClassMenu()}>
         <Menu />
         <Header />
         <h1>Editar Usuário</h1>

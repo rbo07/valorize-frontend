@@ -394,7 +394,7 @@ class MyTeamEvaluation extends React.Component {
         const { sliderValues } = this.state;
 
         return (
-            <div class='Content'>
+            <div class={'Content ' + ActiveMenu.getClassMenu()}>
                 <Menu />
                 <Header />
 

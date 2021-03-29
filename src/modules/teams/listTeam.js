@@ -177,7 +177,7 @@ class ListTeam extends React.Component {
         return (
             <div>
                 <Menu />
-                <div id="Equipes" class='Content'>
+                <div id="Equipes" class={'Content ' + ActiveMenu.getClassMenu()}>
                     <Header />
                     <div class="row">
                         <div class="col-md-6">

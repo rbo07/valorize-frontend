@@ -288,7 +288,7 @@ class ListUser extends React.Component {
     return (
       <div>
         <Menu />
-        <div id="Usuários" class='Content'>
+        <div id="Usuários" class={'Content ' + ActiveMenu.getClassMenu()}>
           <Header />
           <div class="row">
             <div class="col-md-6">

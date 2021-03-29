@@ -317,7 +317,7 @@ class ListRatings extends React.Component {
         return (
             <div>
                 <Menu />
-                <div id="Avaliações" class='Content'>
+                <div id="Avaliações" class={'Content ' + ActiveMenu.getClassMenu()}>
                     <Header />
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">

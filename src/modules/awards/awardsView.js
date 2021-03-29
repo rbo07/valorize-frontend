@@ -211,7 +211,7 @@ class AwardsView extends React.Component {
     render() {
         const { Option } = Select;
         return (
-            <div class='Content awards-view' >
+            <div class={'Content awards-view ' + ActiveMenu.getClassMenu()} >
                 <Menu />
                 <Header />
                 <div class="row">

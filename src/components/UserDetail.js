@@ -94,7 +94,7 @@ class UserDetail extends React.Component {
     render() {
         const history = createBrowserHistory({ forceRefresh: true });
         return (
-            <div class='Content content-super'>
+            <div class={'Content content-super ' + ActiveMenu.getClassMenu()}>
                 <Menu />
                 <Header />
                 <div id="dashboard" class="row">

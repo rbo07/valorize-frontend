@@ -130,7 +130,7 @@ class ListRole extends React.Component {
         return (
             <div>
                 <Menu />
-                <div id="Funções" class='Content'>
+                <div id="Funções" class={'Content ' + ActiveMenu.getClassMenu()}>
                     <Header />
                     <div class="row">
                         <div class="col-md-6">

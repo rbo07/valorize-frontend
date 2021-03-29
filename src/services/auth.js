@@ -26,6 +26,7 @@ class Auth {
     localStorage.setItem('USER_KEY', user_id);
     localStorage.setItem('TOKEN_KEY', token);
     localStorage.setItem('ROLE_KEY', access);
+    localStorage.setItem('BEGINNER_KEY', 1);
     this.authenticated = true;
   }
 

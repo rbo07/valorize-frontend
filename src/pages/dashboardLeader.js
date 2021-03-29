@@ -103,7 +103,7 @@ class DashboardLeader extends React.Component {
     render() {
         const { Option } = Select;
         return (
-            <div class='Content'>
+            <div class={'Content ' + ActiveMenu.getClassMenu()}>
                 <Menu />
                 <Header />
                 <div id="dashboard" class="row">

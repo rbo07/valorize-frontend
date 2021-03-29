@@ -156,7 +156,7 @@ class ListTiebreaker extends React.Component {
         return (
             <div>
                 <Menu />
-                <div id="Critérios-de-Desempate" class='Content'>
+                <div id="Critérios-de-Desempate" class={'Content ' + ActiveMenu.getClassMenu()}>
                     <Header />
                     <div class="row">
                         <div class="col-md-6">

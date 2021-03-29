@@ -264,7 +264,8 @@
     .dropdown-menu.nav-mobile.nav-super{
         top: 63px !important;
     }
-    .Header{
+    .Header,
+    .Header.beginner{
         height: 70px;
         padding: 0 15px;
     }
@@ -330,7 +331,8 @@
         display: none
     }
 
-    .Content{
+    .Content,
+    .Content.beginner{
         padding: 120px 15px 50px 15px;
     }
 

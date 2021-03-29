@@ -254,7 +254,7 @@ class ListCriterion extends React.Component {
         return (
             <div>
                 <Menu />
-                <div id="Critérios" class='Content'>
+                <div id="Critérios" class={'Content ' + ActiveMenu.getClassMenu()}>
                     <Header />
                     <div class="row">
                         <div class="col-md-6">

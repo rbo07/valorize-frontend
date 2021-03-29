@@ -263,7 +263,7 @@ class EditPeriod extends React.Component {
         const history = createBrowserHistory({ forceRefresh: true });
         return (
 
-            <div class='Content'>
+            <div class={'Content ' + ActiveMenu.getClassMenu()}>
                 <Menu />
                 <Header />
                 <h1>Editar Período</h1>

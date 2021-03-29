@@ -48,6 +48,13 @@ class Login extends React.Component {
     }
   }
 
+    // Acionar botão Entrar via tecla Enter
+    componentDidMount() {
+      $(document).keypress(function(e) {
+        if(e.which == 13) $('#Entrar').click();
+    });
+  }
+
     // Validar email
     validateEmail(email) {
       const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -239,7 +246,7 @@ class Login extends React.Component {
               />
             </div>
 
-            <button className="btn btn-lg btn-primary" onClick={() => this.login()}>Entrar <Spin size="small" spinning={this.state.loading} /></button>
+            <button id="Entrar" className="btn btn-lg btn-primary" onClick={() => this.login()}>Entrar <Spin size="small" spinning={this.state.loading} /></button>
 
 
             <GoogleLogin

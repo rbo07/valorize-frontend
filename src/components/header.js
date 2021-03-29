@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { generatePath, Link } from "react-router-dom";
 import Auth from "../services/auth";
+import ActiveMenu from "../services/setMenu";
 
 //import Axios
 import axios from 'axios';
@@ -9,10 +10,14 @@ import { baseURL } from '../services/api';
 // Controle de Rotas
 import RoutesTeam from "./getTeam";
 
+//Import Jquery resources
+import $ from "jquery"
+
 // Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -96,7 +101,7 @@ class Header extends React.Component {
     // Get the header
     var header = document.getElementById("Header");
     var btn = document.getElementById("btn-menu-mobile");
-    
+
 
     // Get the offset position of the navbar
     var sticky = header.offsetTop;
@@ -111,8 +116,18 @@ class Header extends React.Component {
         btn.classList.remove("sticky");
       }
     }
+  }
 
+  getPath() {
+    if (currentRoleUser == 1) {
+      return '/admin/update/' + currentUser
 
+    } else if (currentRoleUser == 2) {
+      return '/leader/update/' + currentUser
+
+    } else if (currentRoleUser == 3) {
+      return '/update/' + currentUser
+    }
   }
 
   getLogo() {
@@ -146,7 +161,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div id="Header" className='Header'>
+      <div id="Header" class={'Header ' + ActiveMenu.getClassMenu()}>
         <div class="row">
           <div class="col-md-6 col-sm-9 col-9">
             {this.getLogo()}
@@ -166,7 +181,11 @@ class Header extends React.Component {
             </div>
 
             <div class="dropdown-menu">
-              <h6 class="dropdown-header">Meus Dados</h6>
+              <h6 class="dropdown-header">Meus Dados
+              <Link class="bt-edit-avatar" to={this.getPath()} >
+                  Editar <FontAwesomeIcon icon={faEdit} />
+                </Link>
+              </h6>
               <li class="dropdown-item">{this.state.data_name}</li>
               <li class="dropdown-item">{this.state.data_email}</li>
               <div class="dropdown-divider"></div>

@@ -8,6 +8,16 @@ class ActiveMenu {
         $('.menu-item').removeClass('active')
         $( id ).addClass('active')
     }
+
+    getClassMenu() {
+        if (localStorage.getItem('BEGINNER_KEY') == 1) {
+            return "beginner"
+
+        } else {
+            return ''
+
+        }
+    }
 }
 
 export default new ActiveMenu();

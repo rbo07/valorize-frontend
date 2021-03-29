@@ -474,7 +474,7 @@ class Winners extends React.Component {
 
     render() {
         return (
-            <div class='Content' >
+            <div class={'Content ' + ActiveMenu.getClassMenu()} >
                 <Menu />
                 <Header />
 
