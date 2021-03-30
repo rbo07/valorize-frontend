@@ -35,7 +35,6 @@ import Menu from "../components/menu";
 
 const currentUser = localStorage.getItem('USER_KEY');
 
-
 class MyTeamEvaluation extends React.Component {
 
     constructor(props) {
@@ -62,7 +61,7 @@ class MyTeamEvaluation extends React.Component {
         this.loadingMyTeam();
         this.resizeCriterions();
         ActiveMenu.setActive('.lk-evaluation');
-        
+
         //Calcula Média
         $(document).on('input', '.custom-range', function () {
 
@@ -114,23 +113,22 @@ class MyTeamEvaluation extends React.Component {
         // Redimensionameto do Container Criterions
         $(window).resize(function () {
             self.resizeCriterions()
-        }); 
-       
+        });
     }
 
- 
 
     resizeCriterions() {
         // Calula a largura do container para os critérios
         let size1 = $('.Content').outerWidth()
         let size2 = $('.Menu').outerWidth()
 
-        let finalSize = size1 - size2 - 500;
+        let finalSize = size1 - size2 - 515;
 
         this.setState({
             finalSize: finalSize,
         })
     }
+
 
     loadingMyTeam() {
         this.setState({ loading: true });
@@ -195,7 +193,7 @@ class MyTeamEvaluation extends React.Component {
     getCriterions() {
         return this.state.listCriterions.map((data) => {
             return (
-                <li>
+                <li class="with-slide">
                     <div class="inputCriterion">
                         <div class='chart x-1'>
                             <input id={'c-' + data.id} disabled type="text" value="0" class="display" />
@@ -256,10 +254,11 @@ class MyTeamEvaluation extends React.Component {
             });
         }
     }
+
     // VERIFICA SE MÉDIA VEM VAZIA
     getScoreAverage(count) {
         let data = this.state.usersAverages
-        if(data !== undefined){
+        if (data !== undefined) {
             return data[count]
         } else {
             return ''
@@ -300,7 +299,10 @@ class MyTeamEvaluation extends React.Component {
                                     </span>
                                     <h3 class="user_name">{data.user.user_name}</h3>
                                 </li>
-                                <li class="container-criterions" style={{ width: this.state.finalSize }} >
+                                <li class="container-criterions" style={{ width: this.state.finalSize + 'px' }} >
+
+
+
                                     <span class="arrow_nav_left">
                                         <FontAwesomeIcon icon={faAngleLeft} size='lg' />
                                     </span>
@@ -323,21 +325,50 @@ class MyTeamEvaluation extends React.Component {
                 }
             });
         } else if (this.state.success == 2) {
-            //Quando está tudo ok
+            //TELA DE AVALIAÇÃO
             return this.state.listMyTeam.map((data) => {
                 return (
-                    <li>
-                        <ul id={'u-' + data.id} >
+                    // <li>
+                    //     <ul id={'u-' + data.id} >
+                    //         <li>
+                    //             <div class="container-avatar">
+                    //                 <span class="avatar">
+                    //                     <img width='70px' src={data.user_photo} />
+                    //                 </span>
+                    //                 <span class="user_name">{data.user_name}</span>
+                    //                 <span class="user_role">{this.checkRole(data.roles)}</span>
+                    //             </div>
+                    //         </li>
+                    //         <li class="container-criterions" style={{ width: this.state.finalSize + 'px'}} >
+
+                    //             <span class="arrow_nav_left">
+                    //                 <FontAwesomeIcon icon={faAngleLeft} size='lg' />
+                    //             </span>
+                    //             <span class="arrow_nav_right">
+                    //                 <FontAwesomeIcon icon={faAngleRight} size='lg' />
+                    //             </span>
+                    //             {this.getCriterions()}
+                    //         </li>
+                    //         <li class="media">
+                    //             <div class='chart x-1'>
+                    //                 <input disabled id={'m-' + data.id} value="0" type="text" class="media_value" />
+                    //             </div>
+                    //             <label>Média</label>
+                    //         </li>
+                    //     </ul>
+                    // </li>
+                    <div class="card evaluated">
+                        <ul id={'u-' + data.id} class="list_criterions">
+
                             <li>
-                                <div class="container-avatar">
-                                    <span class="avatar">
-                                        <img width='70px' src={data.user_photo} />
-                                    </span>
-                                    <span class="user_name">{data.user_name}</span>
-                                    <span class="user_role">{this.checkRole(data.roles)}</span>
-                                </div>
+                                <span class="avatar">
+                                    <img width='70px' src={data.user_photo} />
+                                </span>
+                                <h3 class="user_name">{data.user_name}</h3>
+                                <span class="user_role">{this.checkRole(data.roles)}</span>
                             </li>
-                            <li class="container-criterions" style={{ width: this.state.finalSize }} >
+
+                            <li class="container-criterions" style={{ width: this.state.finalSize + 'px' }} >
                                 <span class="arrow_nav_left">
                                     <FontAwesomeIcon icon={faAngleLeft} size='lg' />
                                 </span>
@@ -346,14 +377,15 @@ class MyTeamEvaluation extends React.Component {
                                 </span>
                                 {this.getCriterions()}
                             </li>
-                            <li class="media">
+
+                            <div class="media">
                                 <div class='chart x-1'>
                                     <input disabled id={'m-' + data.id} value="0" type="text" class="media_value" />
                                 </div>
                                 <label>Média</label>
-                            </li>
+                            </div>
                         </ul>
-                    </li>
+                    </div>
                 )
             })
         }
@@ -383,7 +415,7 @@ class MyTeamEvaluation extends React.Component {
                 <div class="col-md-12">
                     <button type="button" class="btn btn-primary finalbt float-right" onClick={() => this.sendSave()}>
                         Concluir Avaliação <Spin size="small" spinning={this.state.loadingFinalAction} />
-                </button>
+                    </button>
                     <Link class="btn btn-outline-secondary float-right" to={"/leader/dashboard"} >Cancelar</Link>
                 </div>
             )
@@ -411,6 +443,7 @@ class MyTeamEvaluation extends React.Component {
                     </div>
                     {this.loadFillData()}
                     {this.loadFillUnratedUsers()}
+
                 </ul>
                 <div class="row">
                     {this.getButtons()}
@@ -431,7 +464,6 @@ class MyTeamEvaluation extends React.Component {
                 criterion.closest('.inputCriterion').classList.remove('required');
             }
         }
-        console.log(result)
         return result
     }
 
@@ -446,6 +478,7 @@ class MyTeamEvaluation extends React.Component {
         } else {
 
             this.setState({ loadingFinalAction: true });
+
             const datapost = []
             const periodId = this.state.periodId
             const url = baseURL + "/evaluation/" + periodId;
@@ -470,6 +503,7 @@ class MyTeamEvaluation extends React.Component {
             }
 
             const token = 'Bearer ' + localStorage.getItem('TOKEN_KEY');
+
 
             axios.post(url, datapost, {
                 headers: {

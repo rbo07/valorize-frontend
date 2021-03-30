@@ -518,6 +518,10 @@ h6{
     transition: marginLeft 0.5s ease;
 }
 
+.container-criterions .with-slide{
+    padding-top: 10px !important;
+}
+
 .arrow_nav_left,
 .arrow_nav_right{
     width: 40px;
@@ -628,7 +632,10 @@ h6{
     border-bottom-right-radius: 0;
 }
 .user-criterions li ul li.media{
-    float: right;
+    /* float: right; */
+    position: absolute;
+    z-index: 2;
+    right: 50px;
     padding-top: 10px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -1080,10 +1087,12 @@ input[type=range]::-webkit-slider-thumb {
     height: 220px;
     display: inline-block;
     text-align: center;
-    float: right;
     border-radius: 20px;
     border-top-left-radius: 0;    
     border-bottom-left-radius: 0;
+    position: absolute;
+    right: 0;
+    z-index: 2;
 }
 .card.evaluated .media .chart{
     margin-top: 30px;
@@ -1113,6 +1122,12 @@ input[type=range]::-webkit-slider-thumb {
     white-space: nowrap;
     border-radius: 20px;
     display: inline-block;
+}
+
+.container-criterions label{
+    font-size: 14px;
+    color: #0171be;
+    display: block;
 }
 
 .list_criterions .container-criterions{
@@ -1145,8 +1160,8 @@ input[type=range]::-webkit-slider-thumb {
     margin-bottom: 10px;
 }
 .list_criterions li .criterion_name{
-    font-size: 18px;
-    color: #676767;
+    font-size: 14px;
+    color: #0171be;
 }
 
 /* /// TELA PERMIAÇÃO ///*/
