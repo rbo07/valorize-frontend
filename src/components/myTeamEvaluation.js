@@ -328,35 +328,6 @@ class MyTeamEvaluation extends React.Component {
             //TELA DE AVALIAÇÃO
             return this.state.listMyTeam.map((data) => {
                 return (
-                    // <li>
-                    //     <ul id={'u-' + data.id} >
-                    //         <li>
-                    //             <div class="container-avatar">
-                    //                 <span class="avatar">
-                    //                     <img width='70px' src={data.user_photo} />
-                    //                 </span>
-                    //                 <span class="user_name">{data.user_name}</span>
-                    //                 <span class="user_role">{this.checkRole(data.roles)}</span>
-                    //             </div>
-                    //         </li>
-                    //         <li class="container-criterions" style={{ width: this.state.finalSize + 'px'}} >
-
-                    //             <span class="arrow_nav_left">
-                    //                 <FontAwesomeIcon icon={faAngleLeft} size='lg' />
-                    //             </span>
-                    //             <span class="arrow_nav_right">
-                    //                 <FontAwesomeIcon icon={faAngleRight} size='lg' />
-                    //             </span>
-                    //             {this.getCriterions()}
-                    //         </li>
-                    //         <li class="media">
-                    //             <div class='chart x-1'>
-                    //                 <input disabled id={'m-' + data.id} value="0" type="text" class="media_value" />
-                    //             </div>
-                    //             <label>Média</label>
-                    //         </li>
-                    //     </ul>
-                    // </li>
                     <div class="card evaluated">
                         <ul id={'u-' + data.id} class="list_criterions">
 
