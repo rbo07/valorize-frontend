@@ -69,6 +69,7 @@ class EditUser extends React.Component {
       currentTeam: null,
       currentRole: null,
       profileImg: '',
+      profileImgTemp: '',
       loading: false
     }
   }
@@ -113,6 +114,7 @@ class EditUser extends React.Component {
 
   onFileChange(e) {
     this.setState({ profileImg: e.target.files[0] })
+    $('.preview-img').css('display','none')
   }
 
   checkRoleName(data) {
@@ -161,11 +163,12 @@ class EditUser extends React.Component {
             valueSelectTeam: this.checkTeamId(data.teams[0]),
             selectTeam: this.checkTeamName(data.teams[0]),
             currentTeam: this.checkTeamId(data.teams[0]),
-            currentRole: this.checkRoleId(data.roles)
+            currentRole: this.checkRoleId(data.roles),
+            profileImgTemp: data.user_photo
           })
         }
         else {
-          alert("Error web service fuck!")
+          alert("Error web service!")
         }
       })
       .catch(error => {
@@ -260,6 +263,16 @@ class EditUser extends React.Component {
     }
   }
 
+  getPreview(){
+    if(this.state.profileImgTemp !== ''){
+      return (
+        <img width='170px' src={this.state.profileImgTemp} />
+      )
+    } else {
+      return ''
+    }
+  }
+
 
   render() {
     const { Option } = Select;
@@ -348,7 +361,11 @@ class EditUser extends React.Component {
                     class="custom-file-container__custom-file__custom-file-control"
                   ></span>
                 </label>
+                <div class="preview-img">
+                  {this.getPreview()}
+                </div>
                 <div class="custom-file-container__image-preview"></div>
+
               </div>
             </div>
             {this.insertPassword()}
@@ -436,6 +453,8 @@ class EditUser extends React.Component {
       } else {
         datapost.append('user_photo', undefined);
       }
+
+      // console.log(...datapost)
 
       axios.put(url, datapost, {
         headers: {

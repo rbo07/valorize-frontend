@@ -53,6 +53,7 @@ class UpdateUser extends React.Component {
       campPhone: "",
       campPassword: "",
       profileImg: '',
+      profileImgTemp: '',
       loading: false
     }
   }
@@ -99,11 +100,12 @@ class UpdateUser extends React.Component {
             campAddress: data.user_address,
             campPhone: data.user_phone,
             campPassword: data.user_password,
+            profileImgTemp: data.user_photo
           })
         }
         else {
 
-          alert("Error web service fuck!")
+          alert("Error web service!")
         }
       })
       .catch(error => {
@@ -113,6 +115,8 @@ class UpdateUser extends React.Component {
 
   onFileChange(e) {
     this.setState({ profileImg: e.target.files[0] })
+    $('.preview-img').css('display','none')
+    
   }
 
   renderCancelButton() {
@@ -128,6 +132,16 @@ class UpdateUser extends React.Component {
       return (
         <Link class="btn btn-outline-secondary" to={"/dashboard"} >Cancelar</Link>
       )
+    }
+  }
+
+  getPreview(){
+    if(this.state.profileImgTemp !== ''){
+      return (
+        <img width='170px' src={this.state.profileImgTemp} />
+      )
+    } else {
+      return ''
     }
   }
 
@@ -202,6 +216,9 @@ class UpdateUser extends React.Component {
                     class="custom-file-container__custom-file__custom-file-control"
                   ></span>
                 </label>
+                <div class="preview-img">
+                  {this.getPreview()}
+                </div>
                 <div class="custom-file-container__image-preview"></div>
               </div>
             </div>
@@ -285,6 +302,7 @@ class UpdateUser extends React.Component {
         datapost.append('user_photo', undefined);
       }
 
+      // console.log(...datapost)
       axios.put(url, datapost, {
         headers: {
           'Authorization': token

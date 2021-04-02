@@ -181,7 +181,7 @@ class Menu extends React.Component {
                     <li class="menu-item lk-dashboard"><Link class="link-menu" to={"/dashboard"} data-toggle="tooltip" data-placement="right" title="Dashboard" ><FontAwesomeIcon icon={faTh} /><span class="label-beginner">Dashboard</span></Link> </li>
                     <li class="menu-item lk-award"><Link class="link-menu" to="/awards/view" data-toggle="tooltip" data-placement="right" title="Prêmios para o Período" ><FontAwesomeIcon icon={faMedal} /><span class="label-beginner">Prêmios</span></Link> </li>
                     <li class="menu-item lk-criterion"><Link class="link-menu" to="/criterions/view" data-toggle="tooltip" data-placement="right" title="Critérios para o Período" ><FontAwesomeIcon icon={faSpellCheck} /><span class="label-beginner">Critérios</span></Link> </li>
-                    <li class="menu-item lk-update"><Link class="link-menu" to={"/update/" + currentUser} data-toggle="tooltip" data-placement="right" title="Meus Dados" ><FontAwesomeIcon icon={faAddressCard} /><span class="label-beginner">Menus Dados</span></Link> </li>
+                    <li class="menu-item lk-update"><Link class="link-menu" to={"/update/" + currentUser} data-toggle="tooltip" data-placement="right" title="Meus Dados" ><FontAwesomeIcon icon={faAddressCard} /><span class="label-beginner">Meus Dados</span></Link> </li>
                 </ul>
             )
         }

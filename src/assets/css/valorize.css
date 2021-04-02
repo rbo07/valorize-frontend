@@ -1489,9 +1489,18 @@ input[type=range]::-webkit-slider-thumb {
 
   /* /// PHOTO PREVIEW /// */
   .custom-file-container__image-preview{
-      height: 170px;
-      margin-bottom: 10px;
+    width: 170px;
+    height: 170px;
+    margin-bottom: 10px;
   }
+  
+  .preview-img{
+    width: 170px;
+    height: 170px;
+    margin-top: 20px;
+    background: #fff;
+    position: absolute;
+}
 
   .custom-file-container__image-clear{
       font-size: 14px;
