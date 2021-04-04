@@ -114,7 +114,7 @@ class Register extends React.Component {
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <div data-upload-id="photoUploader" class="custom-file-container">
-                            <label>Foto do Perfil <span class="label-required">*</span></label>
+                            <label>Foto do Perfil</label>
                             <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image">
                                 <FontAwesomeIcon icon={faEraser} />
                             </a>
@@ -186,14 +186,14 @@ class Register extends React.Component {
                 'warning'
             )
         }
-        else if (this.state.profileImg == "") {
+        // else if (this.state.profileImg == "") {
 
-            Swal.fire(
-                'Alerta!',
-                "Preencha o campo Foto do Perfil",
-                'warning'
-            )
-        }
+        //     Swal.fire(
+        //         'Alerta!',
+        //         "Preencha o campo Foto do Perfil",
+        //         'warning'
+        //     )
+        // }
         else if (this.state.campPassword == "") {
 
             Swal.fire(
