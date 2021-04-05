@@ -871,10 +871,21 @@ ul.finalists-winners .block-user .ant-select-selection-item .value,
     overflow: hidden;
     display: inline-block;
     border-radius: 40px;
-    background: url(../img/avatar-default.jpg) center center no-repeat;
+    background: #ccc url(../img/avatar-default.png) center center no-repeat;
     transition-property: width, height, border-radius; 
     transition-duration: 0.1s; 
     transition-timing-function: ease-out; 
+}
+
+.card.user-detail .avatar{
+    background: #ccc url(../img/avatar-default.png) center center no-repeat;
+}
+
+#Header .avatar,
+.card.card-link .avatar,
+.list_criterions .avatar,
+.finalists-winners .avatar{
+    background: #ccc url(../img/avatar-default-50x50.png) center center no-repeat;
 }
 
 .btn.btn-avatar{
@@ -1489,18 +1500,18 @@ input[type=range]::-webkit-slider-thumb {
 
   /* /// PHOTO PREVIEW /// */
   .custom-file-container__image-preview{
-    width: 170px;
-    height: 170px;
-    margin-bottom: 10px;
+      width: 170px;
+      height: 170px;
+      margin-bottom: 10px;
+    }
+    
+    .preview-img{
+      width: 170px;
+      height: 170px;
+      margin-top: 20px;
+      background: #fff url(../img/img-default.png) center center no-repeat;
+      position: absolute;
   }
-  
-  .preview-img{
-    width: 170px;
-    height: 170px;
-    margin-top: 20px;
-    background: #fff;
-    position: absolute;
-}
 
   .custom-file-container__image-clear{
       font-size: 14px;

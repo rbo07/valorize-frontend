@@ -162,7 +162,7 @@ class UserDetail extends React.Component {
                     </div>
                     <div class='col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 user_detail'>
                         <div class="card awards">
-                            <label>Prêmios Conquistados <span>| Últimos Períodos</span></label>
+                            <label>Prêmios Conquistados <span>| Todos os Períodos</span></label>
                             <UserAwards userId={this.props.match.params.userId} />
                         </div>
                         <CumulativeAverage userId={this.props.match.params.userId} />
